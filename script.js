@@ -136,20 +136,18 @@ const addFeedback = () => {
     divEl.addEventListener("click", (e) => {
         if (e.target.classList.contains("btn_feedback")) {
             const inputEl = e.target.previousElementSibling;
-            
+
             const text = inputEl.value;
-    
+
             if (text.length < 50 || text.length > 500) {
                 throw new Error("Отзыв должен быть от 50 до 500 символов");
             } else {
                 const cardEl = inputEl.previousElementSibling;
                 cardEl.innerHTML += `<p>${text}</p>`;
-                inputEl.value = '';
+                inputEl.value = "";
             }
         }
     });
-}
+};
 
 addFeedback();
-
-
